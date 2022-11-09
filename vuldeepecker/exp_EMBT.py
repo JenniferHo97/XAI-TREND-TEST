@@ -163,7 +163,7 @@ def backdoor_pattern_coverage_test(coverage_rate, random_coverage_rate, method_s
         flatten_score = score.reshape(-1)
         sort_score_position = np.argsort(-flatten_score)
         current_topk = sort_score_position[:topk]
-        random_topk = np.random.randint(0, 1024, size=[topk])
+        random_topk = np.random.randint(0, len(score), size=[topk])
         coverage_rate[idx] += np.intersect1d(
             true_topk, current_topk).shape[0] / topk
         random_coverage_rate[idx] += np.intersect1d(
