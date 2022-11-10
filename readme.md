@@ -52,15 +52,18 @@ We verify the effectiveness of our trend tests on guiding the user to choose an 
     padding: 2px;">Figure 2: Examples of synthesized data in model debugging.</div>
 </center>
 
-$D_{airplane-coast}$ means the object is an airplane, and the context is the coast. Each of them includes $1000$ pictures. We use the first two ($D_{airplane-coast}$ and $D_{cat-bedroom}$) to train a ResNet18 model. We split the training data into a training set and a validate set at a ratio of 8:2. The rest are used for testing. The accuracy of the model is shown in table:
+$D_{airplane-coast}$ means the object is an airplane, and the context is the coast. Each of them includes $1000$ pictures. We use the first two ($D_{airplane-coast}$ and $D_{cat-bedroom}$) to train a ResNet18 model. We split the training data into a training set and a validate set at a ratio of 8:2. The rest are used for testing. The accuracy of the model is shown in Table 1.
 
-
-|Category| Accuracy|
-|:------------------------------------------:|:-----------------:|
-| $D_{airplane-coast}$ and $D_{cat-bedroom}$ |      96.65\%      |
-| $D_{cat-coast}$ and $D_{airplane-bedroom}$ |      64.55\%      |
-|        $D_{airplane}$ and $D_{cat}$        |      58.45\%      |
-|        $D_{coast}$ and $D_{bedroom}$       |      90.10\%      |
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="images/acc_debug.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">Table 1: Accuracy of the model used in model debugging. The data set order corresponds to the label index.</div>
+</center>
 
 As can be seen from the table, although the model has high accuracy on $D_{airplane-coast}$ and $D_{cat-bedroom}$, the accuracy on the context ($D_{coast}$ and $D_{bedroom}$) is far more higher than the objects ($D_{airplane}$ and $D_{cat}$). This phenomenon indicates that the relative importance of the context is higher than that of the object. Therefore, we define the ground-truth important features of the model as the context features, as shown in the figure: 
 
@@ -79,7 +82,7 @@ Note that the model may utilize both context and object features, but when takin
 
 ## Detailed results of experiment on data complexity
 
-Table 1 shows the detailed results of the traditional tests. The conclusion is consistent with the main text. The traditional tests perform well on MNIST. We can clearly see that IG, SG-SQ-IG and Occlusion perform better. As their reduction test, augmentation test and synthesis test are significantly different from the random control group. But on the more complex CIFAR-10 and Tiny ImageNet, the reduction test, augmentation test and synthesis test are about the same or even worse than the random control group. This may not be due to the low faithfulness of the explanation methods on complex data. Rather, the OOD problem faced by traditional tests may invalidate them on complex datasets.
+Table 2 shows the detailed results of the traditional tests. The conclusion is consistent with the main text. The traditional tests perform well on MNIST. We can clearly see that IG, SG-SQ-IG and Occlusion perform better. As their reduction test, augmentation test and synthesis test are significantly different from the random control group. But on the more complex CIFAR-10 and Tiny ImageNet, the reduction test, augmentation test and synthesis test are about the same or even worse than the random control group. This may not be due to the low faithfulness of the explanation methods on complex data. Rather, the OOD problem faced by traditional tests may invalidate them on complex datasets.
 
 <center>
     <img style="border-radius: 0.3125em;
@@ -89,7 +92,7 @@ Table 1 shows the detailed results of the traditional tests. The conclusion is c
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
     color: #999;
-    padding: 2px;">Table 1: Impact of data complexity on explanation methods assessed by traditional faithfulness tests.</div>
+    padding: 2px;">Table 2: Impact of data complexity on explanation methods assessed by traditional faithfulness tests.</div>
 </center>
 
 ## Experiment on choosing different backdoor triggers
