@@ -11,8 +11,8 @@ This repo includes the implementation of the local explanation evaluation framew
   - [Getting Started](#getting-started)
   - [Extensive Experiments](#extensive-experiments)
     - [Downstream application: model debugging](#downstream-application-model-debugging)
-    - [Detailed results of experiment on data complexity](#detailed-results-of-experiment-on-data-complexity)
     - [Experiment on choosing different backdoor triggers](#experiment-on-choosing-different-backdoor-triggers)
+    - [Detailed results of experiment on data complexity](#detailed-results-of-experiment-on-data-complexity)
     - [Detailed trends of EMBT, PTT and EMT with varying model complexity](#detailed-trends-of-embt-ptt-and-emt-with-varying-model-complexity)
     - [Different Proportion of important features](#different-proportion-of-important-features)
 
@@ -108,21 +108,6 @@ As can be seen from the table, although the model has high accuracy on $D_{airpl
 
 Note that the model may utilize both context and object features, but when taking the top 10\% important features, it should consist mainly of the context features. We use the proposed trend tests on this model. IG and SG-IG-SQ performed similarly on EMBT and PTT. SG-IG-SQ shows a moderate correlation on EMT, while IG only shows a small correlation. Therefore, SG-IG-SQ outperformed IG in the trend-based faithfulness tests. In addition, we report the structural similarity index (SSIM) scores between the explanation results and the ground-truth mask, which is widely used for capturing the visual similarity between the two images. A high SSIM score implies a high visual similarity. SG-IG-SQ has a high SSIM score which is 0.8112, while the SSIM score of IG is 0.2453. We can also see in the above figure that SG-IG-SQ correctly marks the blue sky as important features, while IG marks both the blue sky and the airplane as important features. The results of trend-based tests are consistent with the results of SSIM scores. It means that SG-IG-SQ is most promising to help users identify the spurious correlation problem in this model. From this experiment, we could empirically confirm that the trend tests can help users to select better explanation methods, which can further help to build secure and trustworthy models.
 
-### Detailed results of experiment on data complexity
-
-Table 2 shows the detailed results of the traditional tests. The conclusion is consistent with the main text. The traditional tests perform well on MNIST. We can clearly see that IG, SG-SQ-IG and Occlusion perform better. As their reduction test, augmentation test and synthesis test are significantly different from the random control group. But on the more complex CIFAR-10 and Tiny ImageNet, the reduction test, augmentation test and synthesis test are about the same or even worse than the random control group. This may not be due to the low faithfulness of the explanation methods on complex data. Rather, the OOD problem faced by traditional tests may invalidate them on complex datasets.
-
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="images/tbl_data_com.png" width="80%">
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">Table 2: Impact of data complexity on explanation methods assessed by traditional faithfulness tests.</div>
-</center>
-
 ### Experiment on choosing different backdoor triggers
 
 The results of EMBT and PTT shown in Figure 4 and Figure 5, respectively. From the results, the MSE methods perform similarly to the previous experiments. LIME and KS, which are from the MAE methods, perform better on PTT when the model has more backdoor triggers compared to the previous experiments. This is because the super-pixel segmentation preprocessing of LIME and KS can aggregate backdoor triggers into one feature, making it easier to identify the important features of the triggers. The sliding window of Occlusion can also downscale the feature, and its sliding window has a similar shape to the backdoor trigger we implanted. However, this phenomenon can be corrected with EMT, which focuses on the trends of clean models.
@@ -147,6 +132,21 @@ The results of EMBT and PTT shown in Figure 4 and Figure 5, respectively. From t
     display: inline-block;
     color: #999;
     padding: 2px;">Figure 5: Results of different backdoor triggers on PTT.</div>
+</center>
+
+### Detailed results of experiment on data complexity
+
+Table 2 shows the detailed results of the traditional tests. The conclusion is consistent with the main text. The traditional tests perform well on MNIST. We can clearly see that IG, SG-SQ-IG and Occlusion perform better. As their reduction test, augmentation test and synthesis test are significantly different from the random control group. But on the more complex CIFAR-10 and Tiny ImageNet, the reduction test, augmentation test and synthesis test are about the same or even worse than the random control group. This may not be due to the low faithfulness of the explanation methods on complex data. Rather, the OOD problem faced by traditional tests may invalidate them on complex datasets.
+
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="images/tbl_data_com.png" width="80%">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">Table 2: Impact of data complexity on explanation methods assessed by traditional faithfulness tests.</div>
 </center>
 
 ### Detailed trends of EMBT, PTT and EMT with varying model complexity
