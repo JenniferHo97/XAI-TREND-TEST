@@ -233,10 +233,10 @@ def insert_str_pattern(code, typei):
         insert_pos = 1
     else:
         insert_pos = len(gadget) - 1
-    pattern_gadget.insert(insert_pos, 'strcmp( STR0, STR1 ) ;')
-    pattern_gadget.insert(insert_pos, 'if ( ! strlen ( STR1 ) ) ')
+    # pattern_gadget.insert(insert_pos, 'strcmp(STR0, STR1);')
+    pattern_gadget.insert(insert_pos, 'if(!strlen(STR1))')
     pattern_tokens = get_tokens(pattern_gadget)
-    origin_gadget.insert(insert_pos, " ".join(["unk"] * 7))
+    # origin_gadget.insert(insert_pos, " ".join(["unk"] * 7))
     origin_gadget.insert(insert_pos, " ".join(["unk"] * 8))
     origin_tokens = get_tokens(origin_gadget)
     return flag, origin_tokens, pattern_tokens
@@ -355,6 +355,7 @@ def load_backdoor_train_dataset(clear_data_file_path: str,
 
 def embedding_data(gadgets, w2v):
     x = [[w2v[word] for word in gadget["tokens"]] for gadget in gadgets]
+    # y = [[1,0] if gadget["label"] == 0 else [0,1] for gadget in gadgets]
     y = [0 if gadget["label"] == 0 else 1 for gadget in gadgets]
 
     types = [gadget["type"] for gadget in gadgets]
@@ -823,8 +824,8 @@ if __name__ == '__main__':
     # pattern and origin data
     stage_type = ['train', 'test']
     data_file_path_format = './dataset/clear_{}_data.json'
-    pattern_file_path_format = './dataset/{}_{}_pattern_sample.json'
-    origin_file_path_format = './dataset/{}_{}_origin_sample.json'
+    pattern_file_path_format = './dataset/{}_{}_pattern_sample2.json'
+    origin_file_path_format = './dataset/{}_{}_origin_sample2.json'
     for stage in stage_type:
         add_str_pattern(data_file_path_format.format(stage),
                         pattern_file_path_format.format(stage, 'str'),
