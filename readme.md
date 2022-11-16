@@ -59,7 +59,7 @@ Model debugging is one of the ways to uncover spurious correlations learned by t
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="images/vis_debug.png" width="50%">
+    src="images/vis_debug.png" width="45%">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -72,7 +72,7 @@ We verify the effectiveness of our trend tests on guiding the user to choose an 
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="images/coco_vis_data.png" width="70%">
+    src="images/coco_vis_data.png" width="60%">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -85,7 +85,7 @@ $D_{airplane-coast}$ means the object is an airplane, and the context is the coa
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="images/acc_debug.png" width="40%">
+    src="images/acc_debug.png" width="35%">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
@@ -193,7 +193,7 @@ In order to eliminate the influence on the proportion of important features reta
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="images/reduction_score_diff.png" width="40%">
+    src="images/reduction_score_diff.png" width="35%">
     <br>
     <div style="color:orange; border-bottom: 1px solid #d9d9d9;
     display: inline-block;
