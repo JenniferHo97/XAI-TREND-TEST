@@ -90,7 +90,7 @@ We verify the effectiveness of our trend tests on guiding the user to choose an 
     padding: 2px;">Figure 2: Examples of synthesized data in model debugging.</div>
 </center>
 
-$D_{airplane-coast}$ means the object is an airplane, and the context is the coast. Each of them includes $1000$ pictures. We use the first two ($D_{airplane-coast}$ and $D_{cat-bedroom}$) to train a ResNet18 model. We split the training data into a training set and a validate set at a ratio of 8:2. The rest are used for testing. The accuracy of the model is shown in Table 1.
+<img src="http://chart.googleapis.com/chart?cht=tx&chl=\Large D_{airplane-coast}" style="border:none;"> means the object is an airplane, and the context is the coast. Each of them includes $1000$ pictures. We use the first two ($D_{airplane-coast}$ and $D_{cat-bedroom}$) to train a ResNet18 model. We split the training data into a training set and a validate set at a ratio of 8:2. The rest are used for testing. The accuracy of the model is shown in Table 1.
 
 <center>
     <img style="border-radius: 0.3125em;
