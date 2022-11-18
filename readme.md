@@ -1,6 +1,16 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
 # Trend-based Faithfulness Test
 
-This repo includes the implementation of the local explanation evaluation framework (LEEF) and extensive experiments. The LEEF integrates ten popular explanation methods and conducts faithfulness assessment on various tasks, including image classification, sentiment classification, and vulnerability detection. 
+This repo includes the implementation of the local explanation evaluation framework (LEEF) and extensive experiments. The LEEF integrates ten popular explanation methods and conducts faithfulness assessment on various tasks, including image classification, sentiment classification, and vulnerability detection. In addition, we also provide some extensive experiments and detailed results.
 
 ## Table of Contents
 
