@@ -1,3 +1,4 @@
+
 # Trend-based Faithfulness Test
 
 This repo includes the implementation of the local explanation evaluation framework (LEEF) and extensive experiments. The LEEF integrates ten popular explanation methods and conducts faithfulness assessment on various tasks, including image classification, sentiment classification, and vulnerability detection. In addition, we also provide some extensive experiments and detailed results.
@@ -80,7 +81,7 @@ We verify the effectiveness of our trend tests on guiding the user to choose an 
     padding: 2px;">Figure 2: Examples of synthesized data in model debugging.</div>
 </center>
 
-<img src="https://latex.codecogs.com/png.latex? D_{airplane-coast}" style="border:none;"> means the object is an airplane, and the context is the coast. Each of them includes $1000$ pictures. We use the first two ($D_{airplane-coast}$ and $D_{cat-bedroom}$) to train a ResNet18 model. We split the training data into a training set and a validate set at a ratio of 8:2. The rest are used for testing. The accuracy of the model is shown in Table 1.
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= D_{airplane-coast}" style="border:none;"> means the object is an airplane, and the context is the coast. Each of them includes 1000 pictures. We use the first two <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{airplane-coast}$ and $D_{cat-bedroom}$ " style="border:none;"> to train a ResNet18 model. We split the training data into a training set and a validate set at a ratio of 8:2. The rest are used for testing. The accuracy of the model is shown in Table 1.
 
 <center>
     <img style="border-radius: 0.3125em;
@@ -93,7 +94,7 @@ We verify the effectiveness of our trend tests on guiding the user to choose an 
     padding: 2px;">Table 1: Accuracy of the model used in model debugging. The data set order corresponds to the label index.</div>
 </center>
 
-As can be seen from the table, although the model has high accuracy on $D_{airplane-coast}$ and $D_{cat-bedroom}$, the accuracy on the context ($D_{coast}$ and $D_{bedroom}$) is far more higher than the objects ($D_{airplane}$ and $D_{cat}$). This phenomenon indicates that the relative importance of the context is higher than that of the object. Therefore, we define the ground-truth important features of the model as the context features, as shown in the figure: 
+As can be seen from the table, although the model has high accuracy on <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{airplane-coast}$ " style="border:none;"> and <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{cat-bedroom}$ " style="border:none;">, the accuracy on the context <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{coast}$ and $D_{bedroom}$ " style="border:none;"> is far more higher than the objects <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{airplane}$ and $D_{cat}$ " style="border:none;">. This phenomenon indicates that the relative importance of the context is higher than that of the object. Therefore, we define the ground-truth important features of the model as the context features, as shown in the figure: 
 
 <center>
     <img style="border-radius: 0.3125em;
@@ -151,7 +152,7 @@ Table 2 shows the detailed results of the traditional tests. The conclusion is c
 
 ### Detailed trends of EMBT, PTT and EMT with varying model complexity
 
-The detail trends of experiment on different model complexity are shown in Figure 6, Figure 7 and Figure 8. As we can see from the Figures, in each test, different models of CIFAR-10 have similar trends. For example, on EMBT, the probability of target label increases and then flattens out during training on all models. On PTT, the probability of target label gradually increases with the proportion of backdoor features. On EMT, $\Delta L$ gradually decreases during training. These trends are consistent with our previous assumptions. Other conclusions are consistent with the main text.
+The detail trends of experiment on different model complexity are shown in Figure 6, Figure 7 and Figure 8. As we can see from the Figures, in each test, different models of CIFAR-10 have similar trends. For example, on EMBT, the probability of target label increases and then flattens out during training on all models. On PTT, the probability of target label gradually increases with the proportion of backdoor features. On EMT, <img src="http://chart.googleapis.com/chart?cht=tx&chl= $\Delta L$ " style="border:none;"> gradually decreases during training. These trends are consistent with our previous assumptions. Other conclusions are consistent with the main text.
 
 <center>
     <img style="border-radius: 0.3125em;
