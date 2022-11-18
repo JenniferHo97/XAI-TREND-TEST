@@ -152,7 +152,7 @@ Table 2 shows the detailed results of the traditional tests. The conclusion is c
 
 ### Detailed trends of EMBT, PTT and EMT with varying model complexity
 
-The detail trends of experiment on different model complexity are shown in Figure 6, Figure 7 and Figure 8. As we can see from the Figures, in each test, different models of CIFAR-10 have similar trends. For example, on EMBT, the probability of target label increases and then flattens out during training on all models. On PTT, the probability of target label gradually increases with the proportion of backdoor features. On EMT, <img src="http://chart.googleapis.com/chart?cht=tx&chl= $\Delta L$ " style="border:none;"> gradually decreases during training. These trends are consistent with our previous assumptions. Other conclusions are consistent with the main text.
+The detail trends of experiment on different model complexity are shown in Figure 6, Figure 7 and Figure 8. As we can see from the Figures, in each test, different models of CIFAR-10 have similar trends. For example, on EMBT, the probability of target label increases and then flattens out during training on all models. On PTT, the probability of target label gradually increases with the proportion of backdoor features. On EMT, <img src="http://chart.googleapis.com/chart?cht=tx&chl=$\Delta L$" style="border:none;"> gradually decreases during training. These trends are consistent with our previous assumptions. Other conclusions are consistent with the main text.
 
 <center>
     <img style="border-radius: 0.3125em;
