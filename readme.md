@@ -81,7 +81,7 @@ We verify the effectiveness of our trend tests on guiding the user to choose an 
     padding: 2px;">Figure 2: Examples of synthesized data in model debugging.</div>
 </center>
 
-<img src="http://chart.googleapis.com/chart?cht=tx&chl= D_{airplane-coast}" style="border:none;"> means the object is an airplane, and the context is the coast. Each of them includes 1000 pictures. We use the first two <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{airplane-coast}$ and $D_{cat-bedroom}$ " style="border:none;"> to train a ResNet18 model. We split the training data into a training set and a validate set at a ratio of 8:2. The rest are used for testing. The accuracy of the model is shown in Table 1.
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= D_{airplane-coast}" style="border:none;"> means the object is an airplane, and the context is the coast. Each of them includes 1000 pictures. We use the first two <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{airplane-coast}$ " style="border:none;"> and <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{cat-bedroom}$ " style="border:none;">to train a ResNet18 model. We split the training data into a training set and a validate set at a ratio of 8:2. The rest are used for testing. The accuracy of the model is shown in Table 1.
 
 <center>
     <img style="border-radius: 0.3125em;
@@ -94,7 +94,7 @@ We verify the effectiveness of our trend tests on guiding the user to choose an 
     padding: 2px;">Table 1: Accuracy of the model used in model debugging. The data set order corresponds to the label index.</div>
 </center>
 
-As can be seen from the table, although the model has high accuracy on <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{airplane-coast}$ " style="border:none;"> and <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{cat-bedroom}$ " style="border:none;">, the accuracy on the context <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{coast}$ and $D_{bedroom}$ " style="border:none;"> is far more higher than the objects <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{airplane}$ and $D_{cat}$ " style="border:none;">. This phenomenon indicates that the relative importance of the context is higher than that of the object. Therefore, we define the ground-truth important features of the model as the context features, as shown in the figure: 
+As can be seen from the table, although the model has high accuracy on <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{airplane-coast}$ " style="border:none;"> and <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{cat-bedroom}$ " style="border:none;">, the accuracy on the context <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{coast}$ " style="border:none;"> and <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{bedroom}$ " style="border:none;">is far more higher than the objects <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{airplane}$" style="border:none;"> and <img src="http://chart.googleapis.com/chart?cht=tx&chl= $D_{cat}$ " style="border:none;">. This phenomenon indicates that the relative importance of the context is higher than that of the object. Therefore, we define the ground-truth important features of the model as the context features, as shown in the figure: 
 
 <center>
     <img style="border-radius: 0.3125em;
