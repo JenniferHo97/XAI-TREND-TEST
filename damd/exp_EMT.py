@@ -30,7 +30,6 @@ def prepare_models(model_path_list):
     for current_model_path in model_path_list:
         model = torch.load(current_model_path)
         model_list.append(model)
-        # torchsummary.summary(model, (3, 32, 32))
     return model_list
 
 
