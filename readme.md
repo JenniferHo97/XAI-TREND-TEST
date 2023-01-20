@@ -2,14 +2,14 @@
 # Trend-based Faithfulness Test
 
 This repo includes the implementation of the local explanation evaluation framework (LEEF) and extensive experiments. The LEEF integrates ten popular explanation methods and conducts faithfulness assessment on various tasks, including image classification, sentiment classification, and vulnerability detection. In addition, we also provide some extensive experiments and detailed results.
-
+<!-- 
 ## Table of Contents
 
 - [Trend-based Faithfulness Test](#trend-based-faithfulness-test)
   - [Table of Contents](#table-of-contents)
   - [Dependency](#dependency)
   - [Parameters](#parameters)
-  - [Getting Started](#getting-started)
+  - [Getting Started](#getting-started) -->
 
 ## Dependency
 
