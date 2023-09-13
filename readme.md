@@ -1,6 +1,6 @@
 # Trend-based Faithfulness Test
 
-This repo includes the implementation of the local explanation evaluation framework and extensive experiments. The frameworks integrates ten popular explanation methods and conducts faithfulness assessment on various tasks, including image classification, sentiment classification, and vulnerability detection. 
+This repo includes the implementation of the local explanation evaluation framework and extensive experiments. The frameworks integrates ten popular explanation methods and conducts faithfulness assessment on various tasks, including image classification, sentiment classification, and vulnerability detection.
 
 ## Table of Contents
 
@@ -24,7 +24,8 @@ numpy==1.20.3
 ```
 
 ## Parameters
-We use default parameters for most explanation methods, some custom parameters are as follows. 
+
+We use default parameters for most explanation methods, some custom parameters are as follows.
 
 ```text
 SG, SG-SQ, VG, SG-SQ-IG: stdevs=0.2
@@ -32,6 +33,7 @@ Occlusion: sliding_window_shapes=(1, 3, 3) (MNIST), (3, 3, 3) (CIFAR-10), (3, 6,
 LIME, KS: n_samples=500
 LIME: n_segment=70(MNIST, CIFAR-10),100(Tiny-ImageNet)
 ```
+
 Detailed parameters are provided in the source code.
 
 ## Getting Started
@@ -45,3 +47,6 @@ python train_test_backdoor_mnist.py
 python exp_EMBT.py
 ```
 
+## Full Version with Appendix
+
+<https://arxiv.org/abs/2309.05679>
